@@ -35,4 +35,4 @@ The real persistence.xml file is git-ignored, so you don't get it with the proje
 
 **Now your project is ready for you to do great stuff :smiley:**
 
-Read this document, and strategy-1 for how to include more than one persistence.xml file, as reference for how this start-project is designed.
+Read this [document](https://docs.google.com/document/d/1t-eCdwZd_47v_2qd-aIjtsM-MErGbOm_94hz-pfIEbY/edit?usp=sharing), and strategy-1 for how to include more than one persistence.xml file, as reference for how this start-project is designed.
