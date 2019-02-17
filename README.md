@@ -6,7 +6,7 @@ Fork this project to get a ready to use template for JPA-development in a plain 
 
 ### Change settings in the POM-file
 **Important:**
-The first thing you must do is change the following settings in your POM-file:
+The first thing you should do is, change the following settings in your POM-file:
 
 - `groupId` : This will identify your project uniquely across all projects, so you need to enforce a unique naming schema. 
 - `artifactId`: This will be the name of the jar without the version. You can choose "anything" you like for this name
