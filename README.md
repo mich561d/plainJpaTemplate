@@ -34,3 +34,5 @@ The real persistence.xml file is git-ignored, so you don't get it with the proje
 - Verify that this created the Single table in your database
 
 **Now your project is ready for you to do great stuff :smiley:**
+
+Read this document, and strategy-1 for how to include more than one persistence.xml file, as reference for how this start-project is designed.
