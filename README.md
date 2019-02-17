@@ -12,6 +12,9 @@ The first thing you must do is change the following settings in your POM-file:
 - `artifactId`: This will be the name of the jar without the version. You can choose "anything" you like for this name
 - `version`: Leave it as it is for SNAPSHOT versioning, or replace with typical version numbers if you like (1.0, 1.0.1, 1.1, ...)
 
+[See higest voted answer for details](https://stackoverflow.com/questions/3724415/maven-artifact-and-groupid-naming)
+
+
 ### Executing the test cases
 - run `maven test` to execute the simple JUnit Case that ships with the project
 - run `maven verify`to execute the simple integration test that ships with the project 
