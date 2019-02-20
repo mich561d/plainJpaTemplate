@@ -30,7 +30,7 @@ The real persistence.xml file is git-ignored, so you don't get it with the proje
 
 - Open this file and (in source mode) change properties to reflect the database you just created
 - Rename this file to persistence.xml
-- TBD (make an option to do this without NetBeans) Open the project in NetBeans and run the file `utils.Tester` 
+- Open the project in NetBeans and run the file `utils.Tester` 
 - Verify that this created the Single table in your database
 
 **Now your project is ready for you to do great stuff :smiley:**
