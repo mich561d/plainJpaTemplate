@@ -33,6 +33,10 @@ The real persistence.xml file is git-ignored, so you don't get it with the proje
 - Open the project in NetBeans and run the file `utils.Tester` 
 - Verify that this created the Single table in your database
 
+
+### Use the project with your own Entity Classes
+Delete the Car class, and just follow the few instructions given in the code
+
 **Now your project is ready for you to do great stuff :smiley:**
 
 Read this [document](https://docs.google.com/document/d/1qHd1Nfo5sq_Wp9ink2D8tPow2e9uKxGbvkzu0L9vXKM/edit?usp=sharing), and strategy-1 for information about ways to include more than one persistence-unit and/or persistence.xml file, as reference for how this start-project was designed.
