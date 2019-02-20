@@ -1,52 +1,71 @@
 package dbfacades;
 
-import entity.MyEntity;
+import entity.Car;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author Plaul
- */
+/*
+Simple Facade demo for this start-up project
+ Use this in your own project by:
+  - Rename this class to reflect your "business logic"
+  - Delete the class entity.Car, and add your own entity classes
+  - Delete the three public methods below, and replace with your own Facade Logic 
+  - Delete all content in the main method
+
+*/
 public class DemoFacade {
 
-  EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu-memory");
+  EntityManagerFactory emf;
 
-  DemoFacade(EntityManagerFactory emf) {
+  public DemoFacade(EntityManagerFactory emf) {
     this.emf = emf;
   }
 
-  public DemoFacade() {
+  public Car addCar(Car car){
     EntityManager em = emf.createEntityManager();
-    try {
-      MyEntity e1 = new MyEntity("Hello");
-      MyEntity e2 = new MyEntity("World");
+    try{
       em.getTransaction().begin();
-      em.createQuery("delete from MyEntity e").executeUpdate();
-      em.persist(e1);
-      em.persist(e2);
+      em.persist(car);
       em.getTransaction().commit();
-    } finally {
+      return car;
+    }finally{
       em.close();
     }
   }
-
-  public List<MyEntity> getAllMyEntities() {
+  
+  public List<Car> getAllCars() {
     EntityManager em = emf.createEntityManager();
     try {
-      return (List<MyEntity>) em.createQuery("select m from MyEntity m").getResultList();
+      return (List<Car>) em.createQuery("select m from Car m").getResultList();
+    } finally {
+      em.close();
+    }
+  }
+  public long countCars() {
+    EntityManager em = emf.createEntityManager();
+    try {
+      return (Long) em.createQuery("select Count(m) from Car m").getSingleResult();
     } finally {
       em.close();
     }
 
   }
 
+  /*
+  This will only work when your have added a persistence.xml file in the folder: 
+     src/main/resources/META-INF
+  You can use the file: persistence_TEMPLATE.xml (in this folder) as your template
+  */
   public static void main(String[] args) {
-    DemoFacade df = new DemoFacade();
-    List<MyEntity> entities = df.getAllMyEntities();
-    System.out.println(entities.size());
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+    DemoFacade df = new DemoFacade(emf);
+    df.addCar(new Car("Volvo"));
+    df.addCar(new Car("WW"));
+    df.addCar(new Car("Jaguar"));
+    long numbOfCars = df.countCars();
+    System.out.println("Number of cars: "+numbOfCars);
   }
 
 }

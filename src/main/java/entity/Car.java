@@ -6,12 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author Plaul
- */
+/*
+Simple Entity class for this start-up project
+ Use this in your own project by:
+  - Delete this class
+  - Delete all code that reference this class, in other classes
+  - Add your own Entity Classes
+*/
 @Entity
-public class MyEntity implements Serializable {
+public class Car implements Serializable {
 
   private static final long serialVersionUID = 1L;
   @Id
@@ -19,7 +22,6 @@ public class MyEntity implements Serializable {
   private Integer id;
   
   
-
   public Integer getId() {
     return id;
   }
@@ -28,24 +30,24 @@ public class MyEntity implements Serializable {
     this.id = id;
   }
   
-  String message;
+  String make;
 
-  public MyEntity(String message) {
-    this.message = message;
+  public Car(String message) {
+    this.make = message;
   }
-  public MyEntity() {}
+  public Car() {}
 
-  public String getMessage() {
-    return message;
+  public String getMake() {
+    return make;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setMake(String make) {
+    this.make = make;
   }
-  
+
   @Override
   public String toString() {
-    return "entity.MyEntity[ id=" + id + " ]";
+    return "Car{" + "id=" + id + ", make=" + make + '}';
   }
-  
+ 
 }
